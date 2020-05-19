@@ -1,0 +1,40 @@
+{% extends "default_template/base.html" %}
+{% block main %}
+<main class="main">
+    <div class="categories">
+        {% for each in current_category_children %}
+
+            <article class="category_item">
+                <a href="/category?category={{ each.pk }}">
+                    {% if each.image %}
+                    <div class="category__image">
+                        <img src="/media/{{each.image}}" alt="{{each.name}}" height=200px >
+                    </div>
+                    {% endif %}
+
+                        <h2 class="category__description">{{each.name}}</h2>
+
+                </a>
+            </article>
+
+        {% endfor %}
+    </div>
+    <h1>
+        Товары категории {{current_category_name}}
+    </h1>
+    <div class="products">
+    {% for each in product %}
+        <article class="product_item">
+            <a href="/product/?product={{each.pk}}">
+
+                <div class="product__image">
+                    <img src="/media/{{each.preview}}" alt="{{each.name}}"  >
+                </div>
+                <h2>{{each.name}}</h2>
+            </a>
+        </article>
+
+    {% endfor %}
+    </div>
+</main>
+{% endblock %}

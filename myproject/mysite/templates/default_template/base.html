@@ -1,0 +1,35 @@
+<!doctype html>
+{% load staticfiles %}
+{% load mptt_tags %}
+<html>
+{% block head %}
+<head>
+    {% block links %}
+    <link type="text/css" rel="stylesheet" href="{% static 'templates/default_template/css/reset.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'templates/default_template/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans" rel="stylesheet">
+    <link href="{% static 'templates/default_template/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    {% endblock %}
+    {% block meta %}
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    {% endblock %}
+</head>
+{% endblock%}
+{% block body %}
+<div class="container clearfix">
+    {% block header %}
+        {% include 'default_template/header.html' %}
+    {% endblock %}
+    {% block aside %}
+       {% include 'default_template/sidebar.html' %}
+    {% endblock %}
+    {% block main %}
+    {% endblock %}
+</div>
+{% block footer %}
+    {% include 'default_template/footer.html' %}
+{% endblock %}
+{% endblock %}
+</html>

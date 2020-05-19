@@ -1,0 +1,36 @@
+{% extends "default_template/base.html" %}
+{% load staticfiles %}
+{% block links %}
+{{block.super}}
+<link type="text/css" rel="stylesheet" href="{% static 'templates/default_template/css/slider.css' %}">
+{% endblock %}
+{% block main %}
+<main class="main">
+    <div class="product">
+        <h1>{{product.name}}</h1>
+        <h2>{{product.articul}}</h2>
+        <ul class="slider">
+            {% for each in product_image %}
+            <li>
+                <input type="radio" id="slide{{ forloop.counter }} " name="slide"
+                       {% if forloop.counter == 1 %} checked {% endif %}>
+                <label for="slide{{ forloop.counter }} "></label>
+                <img src="/media/{{each.image}}" alt="Panel {{ forloop.counter }} ">
+            </li>
+            {% endfor %}
+        </ul>
+        <h2>
+            Описание
+        </h2>
+        <p>
+            {{product.description}}
+        </p>
+        <h2>
+            Товара на складе
+        </h2>
+        <p>
+            {{product.count_product}}
+        </p>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% load staticfiles %}
+{% load mptt_tags %}
+<aside class="aside">
+    {% block nav %}
+    <nav class="navbar">
+        <input class="tab" type="checkbox" name="tabs" id="tab-navbar">
+        <label class="menu tab__label" for="tab-navbar"><h2><i class="fa fa-bars" aria-hidden="true"></i>Меню</h2>
+        </label>
+        <ul class="vertical-menu tab__tab-content tab-content__visibility">
+            {% recursetree category %}
+            <li>
+                <a href="/category?category={{ node.pk }}">{{ node.name }}</a>
+            </li>
+            {% if not node.is_leaf_node %}
+            <ul class="vertical-menu">
+                {{ children }}
+            </ul>
+            {% endif %}
+
+            {% endrecursetree %}
+        </ul>
+    </nav>
+    {% endblock %}
+</aside>

@@ -1,0 +1,285 @@
+.clearfix:after{
+	content:"";
+	display:table;
+	width:100%;
+	clear:both;
+}
+body{
+	background-image:url(../images/background-wrapper.jpg);
+	background-size:cover;
+	background-repeat:no-repeat;
+	font-family: 'PT Sans', sans-serif;
+	font-size:14px;
+	color:#727272;
+}
+h1{
+	font-family: 'Open Sans', sans-serif;
+	font-size:38px;
+	margin:10px 0;
+	color:#6dbad6;
+}
+h2{
+	font-family: 'Open Sans', sans-serif;
+	font-size:28px;
+}
+p{
+	font-size:1.5em;
+	line-height:1.5;
+	padding:5px 0;
+}
+a, a:hover, a:visited, a:active{
+	color:#7e7d7e;
+	text-decoration:none;
+}
+.fa{
+	margin-right:12px;
+}
+.container{
+    width:90%;
+	margin:0 auto;
+	background:#e8e8e8;
+	background-size:cover;
+  }
+
+.aside{
+	box-sizing:border-box;
+	width:25%;
+	padding: 10px;
+	float:left;
+
+}
+.logo {
+	padding:0 10px;
+	float:left;
+}
+.logo img{
+	width:125px;
+	display:block;
+	margin:0 auto;
+
+
+}
+.header{
+	padding:10px;
+	color:#d66cb7;
+	font-size:26px;
+	padding-bottom:30px;
+	font-weight:bold;
+	border-bottom:#6dbad6 7px solid;
+}
+.title{
+	color:#d66cb7;
+	font-size:50px;
+	line-height:1.2;
+	float:left;
+
+}
+.vertical-menu{
+    padding-left:15px;
+}
+.vertical-menu>li{
+	display:block;
+	height:28px;
+	padding:12px 12px 4px 0;
+	font-size:20px;
+	line-height:20px;
+	color:#7e7d7e;
+
+}
+.vertical-menu>li>a{
+	color:#7e7d7e;
+	text-decoration:none;
+}
+.vertical-menu>li>a:hover{
+	text-decoration:underline;
+}
+.vertical-menu>li.active{
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+	background:#6db9d3;
+	color:#fff;
+}
+.main{
+	box-sizing:border-box;
+	float:left;
+	width:75%;
+
+	padding: 10px;
+
+
+}
+.footer{
+	min-height:68px;
+	padding:8px 30px;
+	background-color:#fff;
+	margin-top:11px;
+  box-sizing:border-box;
+}
+.categories{
+    display:flex;
+    justify-content:center;
+    align-items:stretch;
+    overflow:auto;
+}
+.category_item{
+
+	flex-basis:33%;
+	padding:5px;
+	margin:0
+	height:inherit;
+}
+.category_item>a{
+    display:block;
+    background-color:#fff;
+	padding:10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	height:90%;
+}
+.category__image{
+    width:inherit;
+    text-align:center;
+    overflow:hidden;
+    margin:0 auto;
+}
+.category__image>img{
+    height:100px;
+}
+.category__description{
+    text-align:center;
+}
+.products{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:stretch;
+}
+.product_item{
+    flex-basis:280px;
+	padding:5px;
+}
+.product_item>a{
+    display:block;
+    background-color:#fff;
+	padding:5px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	height:100%;
+	box-sizing:border-box;
+}
+.product_item>a>h2{
+    text-align:center;
+    font-size:1em;
+}
+.product__image{
+    text-align:center;
+}
+.product__image>img{
+    height:256px;
+    max-width:256px;
+}
+.presentation{
+	width:100%;
+	height:500px;
+	max-width:100%;
+	border:#d2d2d2 1px solid;
+	}
+.menu{
+	display:none;
+	border-top:#727272 1px solid;
+	border-bottom: #727272 1px solid;
+}
+.tab{
+	display:none;
+}
+.tab__label{
+	cursor:pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.tab__tab-content{
+	visibility:hidden;
+	overflow:auto;
+	max-height:0;
+	transition: .5s linear;
+}
+.tab:checked ~.tab__tab-content{
+	visibility:visible;
+	max-height:none;
+}
+.tab-content__visibility{
+	max-height:none;
+	visibility:visible;
+}
+.navbar{
+    background:#fff;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.product{
+    background-color:#fff;
+	padding:10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+@media(max-width:1200px){
+	.container{
+		width:100%;
+	}
+}
+@media (max-width: 1000px){
+	.wrapper{
+		width:100%;
+	}
+	.aside{
+		box-sizing:border-box;
+		width:100%;
+		padding:5px;
+		float:none;
+		position:sticky;
+		top:-90px;
+		min-height:90px;
+	}
+	.header{
+	padding-bottom:0;
+	font-size:20px;
+	line-height:24px;
+	max-width:600px;
+	}
+	.logo{
+		float:left;
+
+	}
+	.logo img{
+		width:63px;
+
+	}
+	.tab-content__visibility{
+		visibility:hide;
+		max-height:0;
+	}
+
+	.vertical-menu>li.active{
+		border-radius:0;
+	}
+	.container{
+		width:100%;
+
+	}
+	.middle{
+
+		background-image:url(../images/background-container-little.jpg);
+		background-repeat:no-repeat;
+		background-size:cover;
+		width:100%;
+
+	}
+	.main{
+		float:none;
+		width:100%;
+		padding:20px 0 0 0;
+		box-sizing:border-box;
+		padding:5px;
+		border:none;
+	}
+	.menu{
+		display:block;
+	}
+}
