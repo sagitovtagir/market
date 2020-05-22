@@ -219,6 +219,15 @@ a, a:hover, a:visited, a:active{
 	padding:10px;
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
+.breadcrumbs{
+    padding:10px 0;
+    font-size:20px;
+}
+.breadcrumbs>a{
+    color:#d66cb7;
+    font-size:20px;
+    text-decoration:underline;
+}
 @media(max-width:1200px){
 	.container{
 		width:100%;

@@ -1,0 +1,6 @@
+{% load mptt_tags %}
+<div class="breadcrumbs">
+        {% for each in current_category_ancestors %}
+            / <a href="/category/?category={{each.id}}">{{each.name}}</a>
+        {% endfor %}
+</div>

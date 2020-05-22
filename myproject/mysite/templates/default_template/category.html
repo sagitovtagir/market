@@ -1,6 +1,7 @@
 {% extends "default_template/base.html" %}
 {% block main %}
 <main class="main">
+    {% include 'default_template/breadcrumbs.html' %}
     <div class="categories">
         {% for each in current_category_children %}
 
