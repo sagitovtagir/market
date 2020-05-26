@@ -61,10 +61,9 @@ a, a:hover, a:visited, a:active{
 }
 .header{
 	padding:10px;
-	color:#d66cb7;
-	font-size:26px;
+
 	padding-bottom:30px;
-	font-weight:bold;
+
 	border-bottom:#6dbad6 7px solid;
 }
 .title{
@@ -76,6 +75,7 @@ a, a:hover, a:visited, a:active{
 }
 .vertical-menu{
     padding-left:15px;
+    box-sizing:content-box;
 }
 .vertical-menu>li{
 	display:block;
@@ -84,7 +84,7 @@ a, a:hover, a:visited, a:active{
 	font-size:20px;
 	line-height:20px;
 	color:#7e7d7e;
-
+    box-sizing:content-box;
 }
 .vertical-menu>li>a{
 	color:#7e7d7e;
@@ -213,6 +213,7 @@ a, a:hover, a:visited, a:active{
 .navbar{
     background:#fff;
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	box-sizing:content-box;
 }
 .product{
     background-color:#fff;
@@ -228,6 +229,17 @@ a, a:hover, a:visited, a:active{
     font-size:20px;
     text-decoration:underline;
 }
+.login{
+    padding:30px;
+    margin:0 auto;
+    width:30%;
+}
+.login>h4{
+    font-size:20px;
+}
+.login>form{
+    padding-top:20px;
+}
 @media(max-width:1200px){
 	.container{
 		width:100%;
@@ -237,6 +249,11 @@ a, a:hover, a:visited, a:active{
 	.wrapper{
 		width:100%;
 	}
+	.login{
+    padding:30px;
+    margin:0 auto;
+    width:100%;
+}
 	.aside{
 		box-sizing:border-box;
 		width:100%;

@@ -1,7 +1,8 @@
-
 from django.db import models
 from mptt.models import MPTTModel
 from mptt.fields import TreeForeignKey
+from django.contrib.auth.models import User
+
 
 # Create your models here.
 
@@ -30,6 +31,7 @@ class Category(MPTTModel):
     class Meta:
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
+
 
 class Product(models.Model):
     category = TreeForeignKey(Category,
@@ -61,6 +63,7 @@ class Product(models.Model):
                                         null=False,
                                         default=0,
                                         blank=True)
+
     def __str__(self):
         return self.name
 
@@ -68,15 +71,35 @@ class Product(models.Model):
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
 
+
 class ProductImage(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Категория')
+    product = models.ForeignKey(Product,
+                                on_delete=models.CASCADE,
+                                verbose_name='Категория')
     image = models.ImageField(verbose_name='Изображение',
                               null=False,
                               default='',
                               blank=True,
                               upload_to='images/product')
 
-
     class Meta:
         verbose_name = 'Изображение товара'
         verbose_name_plural = 'Изображения товара'
+
+class Deal(models.Model):
+    user = models.ForeignKey(User,
+                             on_delete=models.CASCADE,
+                             verbose_name='Пользователь')
+    product = models.ForeignKey(Product,
+                                on_delete=models.CASCADE,
+                                verbose_name='Товар')
+    product_count = models.FloatField(verbose_name='Количество',
+                                      null=False,
+                                      blank=True,
+                                      default=0)
+    STAGECHOICE = ((0, 'cart'), (1, 'order'), (2, 'pay'), (3, 'delivery'), (4, 'receipt'))
+    stage = models.CharField(max_length=1, choices=STAGECHOICE)
+
+    class Meta:
+        verbose_name = 'Сделка'
+        verbose_name_plural = 'Сделки'

@@ -4,6 +4,7 @@ from django.http import HttpResponseNotFound
 
 
 # Create your views here.
+
 def index(request):
     context = {}
     category = models.Category.objects.all()
