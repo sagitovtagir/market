@@ -2,9 +2,16 @@
 
 <header class="header clearfix">
         {% block logo %}
+        <div class="clearfix">
         <div class="logo">
             <img src="{% static 'templates/default_template/images/logo.png' %}" alt="logo">
         </div>
         {% endblock %}
         <h1 class="title">Магазин одежды Ромашка</h1>
+        </div>
+        {% if user.is_authenticated %}
+        <p>Добро пожаловать, {{user.username}}. <a href="/logout">Выйти</a></p>
+        {% else %}
+        <p>Вы не вошли на сайт. <a href="/login">Войти на сайт</a></p>
+        {% endif %}
 </header>

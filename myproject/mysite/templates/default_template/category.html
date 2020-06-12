@@ -1,6 +1,7 @@
 {% extends "default_template/base.html" %}
 {% block main %}
 <main class="main">
+    {% include 'default_template/breadcrumbs.html' %}
     <div class="categories">
         {% for each in current_category_children %}
 
@@ -8,7 +9,7 @@
                 <a href="/category?category={{ each.pk }}">
                     {% if each.image %}
                     <div class="category__image">
-                        <img src="/media/{{each.image}}" alt="{{each.name}}" height=200px >
+                        <img src="{{each.image.url}}" alt="{{each.name}}" height=200px >
                     </div>
                     {% endif %}
 
@@ -28,7 +29,7 @@
             <a href="/product/?product={{each.pk}}">
 
                 <div class="product__image">
-                    <img src="/media/{{each.preview}}" alt="{{each.name}}"  >
+                    <img src="{{each.preview.url}}" alt="{{each.name}}"  >
                 </div>
                 <h2>{{each.name}}</h2>
             </a>
